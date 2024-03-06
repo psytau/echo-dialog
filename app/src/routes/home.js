@@ -15,7 +15,7 @@ const GetStartedButton = (props) => {
   ) : (
     <div className="container w-75">
       <Card>
-        <Card.Header>Welcome to Dialgo Echo</Card.Header>
+        <Card.Header>Welcome to Drama Echo</Card.Header>
         <Card.Body>
           <Button as={Link} to="/dialogs" className="m-3 float-start">
             I am a teacher.
@@ -37,11 +37,11 @@ class HomeRoute extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <header>
+        <div>
           <h1> Drama Echo </h1>
           <p> Practice pronunciation with friends or alone. </p>
           <GetStartedButton className="m-3" />
-        </header>
+        </div>
       </React.Fragment>
     );
   }
