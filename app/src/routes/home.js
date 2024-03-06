@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import SplashHero from "../components/SplashHero";
 import "./home.scss";
 // import withAuth from "../withAuth";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -29,22 +30,31 @@ const GetStartedButton = (props) => {
   );
 };
 
-class HomeRoute extends React.Component {
-  constructor(props) {
-    super(props);
-    wakeUpServer();
-  }
-  render() {
-    return (
-      <React.Fragment>
-        <div>
-          <h1> Drama Echo </h1>
-          <p> Practice pronunciation with friends or alone. </p>
-          <GetStartedButton className="m-3" />
-        </div>
-      </React.Fragment>
-    );
-  }
+// class HomeRoute extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     wakeUpServer();
+//   }
+//   render() {
+//     return (
+//       <React.Fragment>
+//         <SplashHero ></SplashHero>
+//       </React.Fragment>
+//     );
+//   }
+// }
+
+function HomeRoute (props) {
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  wakeUpServer();
+  return (
+    <React.Fragment>
+      <SplashHero 
+        loginWithRedirect={loginWithRedirect}
+        isAuthenticated={isAuthenticated}>
+    </SplashHero>
+    </React.Fragment>
+  );
 }
 
 export default HomeRoute;
