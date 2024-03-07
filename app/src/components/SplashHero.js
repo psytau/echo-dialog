@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 // import LoginButton from './auth/LoginButton';
 
 const LoginButton = ({text, variant, loginWithRedirect}) => {
-    return <Button variant={variant || "dark"} onClick={() => loginWithRedirect()}>
+    return <Button variant={variant || "dark"} size="lg" onClick={() => loginWithRedirect()}>
         {text || "Log In"}
       </Button>;
   };
